@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pahren The No One &mdash; Brand Roadmap</title>
+<style>
+  :root {
+    --black:  #212020;
+    --white:  #FFFFFF;
+    --cream:  #FFFFE6;
+    --orange: #E0580B;
+    --muted:  rgba(255,255,230,0.5);
+    --border: rgba(255,255,255,0.09);
+    --card:   rgba(255,255,255,0.035);
+    --yellow: #FEFFAB;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'PP Neue Montreal','Neue Montreal','DM Sans',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+    font-weight: 400; background: var(--black); color: var(--white);
+    padding: 48px 56px; min-height: 100vh;
+  }
+  .kicker { font-size:10px; font-weight:500; letter-spacing:.3em; text-transform:uppercase; color:var(--orange); margin-bottom:8px; }
+  .brand-name { font-size:38px; font-weight:500; letter-spacing:-.5px; line-height:1.1; margin-bottom:6px; color:var(--white); }
+  .brand-name .oo { color:var(--cream); }
+  .brand-sub { font-size:12px; color:rgba(255,255,230,0.65); margin-bottom:18px; }
+  .tagline { font-size:14px; font-style:italic; color:var(--cream); border-left:2px solid var(--orange); padding:6px 0 6px 14px; margin-bottom:6px; line-height:1.55; max-width:680px; }
+  .secondary-line { font-size:11.5px; font-weight:500; color:var(--cream); letter-spacing:.08em; margin-bottom:36px; padding-left:17px; }
+  .hr { border:none; border-top:1px solid var(--border); margin-bottom:32px; }
+  .sec-label { font-size:9.5px; font-weight:500; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; }
+  .phase-strip { display:flex; gap:10px; align-items:stretch; margin-bottom:10px; }
+  .ph { flex:1; background:var(--card); border:1px solid var(--border); border-radius:10px; padding:18px 15px 15px; display:flex; flex-direction:column; gap:6px; }
+  .ph.done  { opacity:0.35; }
+  .ph.start { border-color:var(--orange); background:rgba(224,88,11,0.06); }
+  .ph-num { font-size:9px; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+  .ph h3 { font-size:13.5px; font-weight:500; line-height:1.3; }
+  .ph ul { list-style:none; font-size:11px; color:var(--cream); line-height:1.7; flex:1; }
+  .ph ul li::before { content:"·"; color:var(--muted); margin-right:7px; }
+  .ph .price { font-size:12px; font-weight:500; color:var(--white); margin-top:auto; padding-top:8px; }
+  .ph .when { font-size:10px; color:var(--muted); font-weight:400; }
+  .flow-arrow { color:var(--muted); font-size:16px; align-self:center; flex:0 0 auto; }
+  .flow-arrow.main { color:var(--orange); font-size:18px; }
+  .engine-banner { border:1px solid var(--border); border-left:3px solid var(--orange); border-radius:10px; padding:22px 24px; margin-bottom:32px; }
+  .engine-label { font-size:9px; letter-spacing:.28em; text-transform:uppercase; color:var(--orange); font-weight:500; margin-bottom:12px; }
+  .tier-row { display:flex; gap:10px; }
+  .tier { flex:1; border:1px solid var(--border); border-radius:8px; padding:14px 13px 12px; display:flex; flex-direction:column; gap:5px; }
+  .tier.scale { opacity:0.75; }
+  .tier-label { font-size:8.5px; letter-spacing:.22em; text-transform:uppercase; font-weight:500; color:var(--muted); }
+  .tier h4 { font-size:12.5px; font-weight:500; }
+  .tier .tprice { font-size:11.5px; font-weight:500; color:var(--white); }
+  .tier ul { list-style:none; font-size:10.5px; color:var(--cream); line-height:1.65; flex:1; }
+  .tier ul li::before { content:"·"; color:var(--muted); margin-right:6px; }
+  .tier .note { font-size:9.5px; color:rgba(255,255,230,0.7); font-style:italic; margin-top:4px; }
+  .scale-note { font-size:10.5px; color:rgba(255,255,230,0.7); font-style:italic; margin-top:12px; }
+  .highlight { background:var(--yellow); color:var(--black); padding:1px 6px; border-radius:3px; font-weight:500; font-style:normal; }
+  .eco-grid { display:flex; gap:12px; margin-bottom:32px; }
+  .eco-col { flex:1; background:var(--card); border:1px solid var(--border); border-radius:10px; padding:20px 18px; }
+  .eco-col h2 { font-size:9px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:500; margin-bottom:14px; }
+  .ladder { list-style:none; }
+  .ladder li { display:flex; justify-content:space-between; align-items:baseline; font-size:11.5px; padding:5px 0; border-bottom:1px solid var(--border); line-height:1.4; }
+  .ladder li:last-child { border-bottom:none; }
+  .ladder .p { color:var(--white); font-weight:500; white-space:nowrap; margin-left:10px; font-size:11px; }
+  .ladder .p.rec { color:var(--cream); }
+  .loop { list-style:none; font-size:11.5px; line-height:1.75; color:var(--cream); }
+  .loop li::before { content:"·"; color:var(--muted); margin-right:8px; }
+  .audience-block { margin-top:18px; }
+  .audience-block h2 { font-size:9px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:500; margin-bottom:10px; }
+  .aud-item { font-size:11px; line-height:1.55; margin-bottom:5px; color:var(--cream); }
+  .aud-item b { color:var(--white); }
+  .rev-strip { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:24px; }
+  .rev-card { border:1px solid var(--border); border-radius:9px; padding:14px 16px; }
+  .rc-label { font-size:9px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+  .rc-num { font-size:20px; font-weight:500; color:var(--white); }
+  .rc-sub { font-size:10px; color:rgba(255,255,230,0.7); margin-top:3px; }
+  .goal { background:rgba(255,255,230,0.04); border:1px solid rgba(255,255,230,0.15); border-radius:10px; padding:16px 22px; display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; }
+  .goal b { color:var(--cream); font-size:15px; font-weight:500; }
+  .goal span { font-size:11px; color:rgba(255,255,230,0.75); max-width:38%; }
+  .foot { font-size:10px; color:rgba(255,255,230,0.6); text-align:right; margin-top:10px; }
+</style>
+</head>
+<body>
+
+<div class="kicker">B Growth Studio &middot; Brand Roadmap &middot; June 2026</div>
+<h1 class="brand-name">Pahren The N<span class="oo">oo</span>ne</h1>
+<div class="brand-sub">The double O is infinity. The &ldquo;no one&rdquo; is humility.</div>
+<div class="tagline">The forbidden art of perfect timing &mdash; once reserved for emperors, now decoded for modern life.</div>
+<div class="secondary-line">Ancient strategy. Modern clarity.</div>
+<hr class="hr">
+
+<div class="sec-label">The Roadmap</div>
+<div class="phase-strip">
+
+  <div class="ph done">
+    <div class="ph-num">Phase 0 &middot; Done</div>
+    <h3>Website</h3>
+    <ul>
+      <li>Site built &amp; live</li>
+      <li>Covered by existing agreement</li>
+      <li>$150/mo maintenance continues</li>
+    </ul>
+    <div class="price" style="color:var(--muted)">$2,000 <span class="when">paid</span></div>
+  </div>
+
+  <div class="flow-arrow main">&rarr;</div>
+
+  <div class="ph start">
+    <div class="ph-num">Phase 1 &middot; Start here</div>
+    <h3>Brand &amp; Digital Launch Foundation</h3>
+    <ul>
+      <li>Logo design</li>
+      <li>Brand colors &amp; typography</li>
+      <li>Brand book &amp; story</li>
+      <li>7 social platforms + bios</li>
+      <li>Lead magnet &amp; newsletter</li>
+      <li>Launch calendar</li>
+      <li>Social disclaimers</li>
+    </ul>
+    <div class="price">$3,497 <span class="when">one-time</span></div>
+  </div>
+
+  <div class="flow-arrow main">&rarr;</div>
+
+  <div class="ph">
+    <div class="ph-num">Phase 3A &middot; Offer Ecosystem</div>
+    <h3>Digital Products</h3>
+    <ul>
+      <li>Free webinar strategy</li>
+      <li>$27/mo Timing Calendar</li>
+      <li>$47 Timing Toolkit</li>
+      <li>$147 Destiny Blueprint</li>
+    </ul>
+    <div class="price">$4,447 DFY &nbsp;&middot;&nbsp; <span class="when">$2,997 strategy only</span></div>
+  </div>
+
+  <div class="flow-arrow">&rarr;</div>
+
+  <div class="ph">
+    <div class="ph-num">Phase 3B &middot; High-Ticket</div>
+    <h3>Signature Program</h3>
+    <ul>
+      <li>Premium offer designed</li>
+      <li>$2,497 client price</li>
+      <li>Curriculum + delivery built</li>
+    </ul>
+    <div class="price">$4,447 DFY &nbsp;&middot;&nbsp; <span class="when">$1,997 strategy only</span></div>
+  </div>
+
+  <div class="flow-arrow">&rarr;</div>
+
+  <div class="ph">
+    <div class="ph-num">Phase 4 &middot; Any time</div>
+    <h3>AI Business System</h3>
+    <ul>
+      <li>AI trained on brand voice</li>
+      <li>5 plug-and-play playbooks</li>
+      <li>2-hr setup session</li>
+      <li>30-day refinement</li>
+    </ul>
+    <div class="price">$4,497 <span class="when">one-time</span></div>
+  </div>
+
+</div>
+
+<div class="engine-banner">
+  <div class="engine-label">Phase 2 &middot; Content Engine &mdash; Choose your tier</div>
+  <div class="tier-row">
+
+    <div class="tier">
+      <div class="tier-label">Launch Warm-Up</div>
+      <h4>Build the foundation</h4>
+      <div class="tprice">$997 / month</div>
+      <ul>
+        <li>8 posts / month</li>
+        <li>2 platforms</li>
+        <li>1 strategy call / month</li>
+      </ul>
+      <div class="note">Starting from zero &mdash; recommended first step</div>
+    </div>
+
+    <div class="tier">
+      <div class="tier-label">Launch</div>
+      <h4>Grow the audience</h4>
+      <div class="tprice">$1,497 / month</div>
+      <ul>
+        <li>8 posts / month</li>
+        <li>2 platforms</li>
+        <li>2 newsletters / month</li>
+        <li>2 strategy calls / month</li>
+      </ul>
+      <div class="note">Once early traction is visible</div>
+    </div>
+
+    <div class="tier">
+      <div class="tier-label">Growth</div>
+      <h4>Build authority</h4>
+      <div class="tprice">$3,997 / month</div>
+      <ul>
+        <li>16 posts / month</li>
+        <li>4 platforms</li>
+        <li>Weekly newsletter</li>
+        <li>3 calls / month</li>
+        <li>Monthly growth report</li>
+        <li>Ghostwriting from raw ideas</li>
+      </ul>
+      <div class="note">Converting leads, building authority</div>
+    </div>
+
+    <div class="tier scale">
+      <div class="tier-label">Scale &mdash; where this goes</div>
+      <h4>Media presence</h4>
+      <div class="tprice" style="color:var(--muted)">$7,497 / month</div>
+      <ul>
+        <li>20+ posts / month</li>
+        <li>All platforms</li>
+        <li>Podcast + collab strategy</li>
+        <li>Weekly call</li>
+        <li>PR + speaking outreach</li>
+      </ul>
+      <div class="note">Not a current offer &mdash; this is the destination</div>
+    </div>
+
+  </div>
+  <div class="scale-note">All tiers &middot; 3-month minimum &middot; Nothing posts without your approval &middot; You provide raw notes, photos, and videos &mdash; B Growth Studio builds the content &middot; <span class="highlight">+$250/mo per additional platform</span></div>
+</div>
+
+<div class="eco-grid">
+  <div class="eco-col">
+    <h2>Your Complete Offer Ladder</h2>
+    <ul class="ladder">
+      <li>&ldquo;Your Lucky Days&rdquo; lead magnet <span class="p">Free</span></li>
+      <li>Timing Notes biweekly newsletter <span class="p">Free</span></li>
+      <li>Free Introductory Webinar <span class="p">Free</span></li>
+      <li>Timing Calendar &mdash; monthly guide <span class="p rec">$27 / mo</span></li>
+      <li>Timing Toolkit &mdash; self-serve guide <span class="p">$47</span></li>
+      <li>Destiny Blueprint &mdash; mini course <span class="p">$147</span></li>
+      <li>1:1 Intro Session <span class="p">$167</span></li>
+      <li>Full Destiny Reading <span class="p">$297</span></li>
+      <li>90-Day Execution Arc <span class="p">$497</span></li>
+      <li>[Signature High-Ticket Program] <span class="p">$2,497</span></li>
+    </ul>
+  </div>
+
+  <div class="eco-col">
+    <h2>Retention Loop</h2>
+    <ul class="loop">
+      <li>Calendar sub &mdash; $27/mo recurring revenue anchor</li>
+      <li>Destiny Reading &mdash; $297 annual renewal &middot; monthly sessions $197</li>
+      <li>Intro $167 &rarr; Full Reading $297 &rarr; Monthly $197 &rarr; 90-Day Arc $497 &rarr; natural upsell path</li>
+      <li>Community (Telegram or Circle) + milestone triggers</li>
+    </ul>
+    <div class="audience-block">
+      <h2>Your Audience</h2>
+      <div class="aud-item"><b>Relationships:</b> Women 30&ndash;55, spiritual &amp; wellness, life &amp; relationship timing (Instagram + TikTok)</div>
+      <div class="aud-item"><b>Founders:</b> Business founders timing big moves (Instagram + LinkedIn)</div>
+      <div class="aud-item"><b>Authority:</b> Art of War, what is Qimen, big moves &amp; relationship timing (YouTube)</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec-label">Revenue Scenarios</div>
+<div class="rev-strip">
+  <div class="rev-card">
+    <div class="rc-label">Foundation</div>
+    <div class="rc-num">$18K</div>
+    <div class="rc-sub">Calendar &times;30 + 2 sessions + 1 reading / mo</div>
+  </div>
+  <div class="rev-card">
+    <div class="rc-label">Growing</div>
+    <div class="rc-num">$27K</div>
+    <div class="rc-sub">+ Toolkit &times;3 + Course &times;2 / mo</div>
+  </div>
+  <div class="rev-card">
+    <div class="rc-label">Full Ecosystem Active</div>
+    <div class="rc-num">$50K+</div>
+    <div class="rc-sub">Calendar &times;50 + all products + 1 Arc / mo</div>
+  </div>
+  <div class="rev-card">
+    <div class="rc-label">Scale</div>
+    <div class="rc-num" style="font-size:16px;padding-top:3px;">Uncapped</div>
+    <div class="rc-sub">High-ticket + speaking + partnerships</div>
+  </div>
+</div>
+
+<div class="goal">
+  <span>Your self-funding goal: $15,000 / year</span>
+  <b>&rarr; Foundation scenario already clears it at $18,000</b>
+  <span>Before the Arc, the high-ticket offer, or a single speaking gig.</span>
+</div>
+
+<div class="foot">Nothing launches without your sign-off &nbsp;&middot;&nbsp; Existing website agreement ($150/mo maintenance) continues independently &nbsp;&middot;&nbsp; Your craft deserves a system built around it. Strategy and execution by B Growth Studio.</div>
+
+</body>
+</html>
